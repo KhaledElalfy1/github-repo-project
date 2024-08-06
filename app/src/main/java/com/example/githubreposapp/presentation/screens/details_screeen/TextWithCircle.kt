@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun TextWithCircle(text: String) {
+fun TextWithCircle(text: String,color: Color) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier.padding(horizontal = 12.dp)
@@ -29,7 +29,7 @@ fun TextWithCircle(text: String) {
                 .size(16.dp)
         ) {
             drawCircle(
-                color = Color.Blue,
+                color = color,
                 radius = 12.dp.toPx(),
             )
         }

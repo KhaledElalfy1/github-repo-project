@@ -56,7 +56,7 @@ fun DetailsScreenBody() {
             verticalAlignment = Alignment.CenterVertically
         ) {
             TextWithIconSection("1252", R.drawable.ic_star)
-            TextWithCircle("python")
+            TextWithCircle("python",color = Color.Red)
             TextWithIconSection(text = "347", id = R.drawable.fork)
 
         }
