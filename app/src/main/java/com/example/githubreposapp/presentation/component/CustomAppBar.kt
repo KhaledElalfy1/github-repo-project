@@ -21,24 +21,24 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun CustomAppBar(
     modifier: Modifier = Modifier,
-    title:String,
-    backgroundColor:Color=MaterialTheme.colorScheme.primary,
-    titleStyle:TextStyle= MaterialTheme.typography.displayLarge,
-    onBackArrowClicked:(()->Unit)?=null
+    title: String,
+    backgroundColor: Color = MaterialTheme.colorScheme.primary,
+    titleStyle: TextStyle = MaterialTheme.typography.displayLarge,
+    onBackArrowClicked: (() -> Unit)? = null
 ) {
     CenterAlignedTopAppBar(
-        modifier=modifier.background(backgroundColor),
-        title = { Text(text = title, /*style = titleStyle*/ style = TextStyle(fontSize = 30.sp))},
+        modifier = modifier.background(backgroundColor),
+        title = { Text(text = title, style = TextStyle(fontSize = 30.sp)) },
         navigationIcon = {
-            if (onBackArrowClicked!=null) {
+            if (onBackArrowClicked != null) {
                 IconButton(onClick = onBackArrowClicked) {
-                    Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack, contentDescription ="back Icon" )
+                    Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "back Icon")
                 }
             }
         }
     )
-}
 
+}
 
 @Preview(showBackground = true, showSystemUi = true, device = Devices.PIXEL_7)
 @Composable

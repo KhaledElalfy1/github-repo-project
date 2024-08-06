@@ -1,7 +1,6 @@
 package com.example.githubreposapp.presentation.screens.details_screeen
 
 import android.annotation.SuppressLint
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,14 +19,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import coil.compose.rememberAsyncImagePainter
-import coil.request.ImageRequest
 import com.example.githubreposapp.R
 import com.example.githubreposapp.data.models.DetailsScreenUiModel
 import com.example.githubreposapp.presentation.component.CustomAppBar
@@ -40,9 +36,7 @@ fun DetailsScreen(modifier: Modifier, detailsScreenModel:DetailsScreenUiModel) {
     Scaffold (
         modifier = modifier.fillMaxSize(),
         topBar = {
-            CustomAppBar(title = "Details") {
-                
-            }
+            CustomAppBar(title = "Details", onBackArrowClicked = {})
         }
     ){ innerPadding->
 

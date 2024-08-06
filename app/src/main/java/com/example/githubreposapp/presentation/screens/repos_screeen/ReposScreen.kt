@@ -93,9 +93,7 @@ fun ReposScreen(modifier: Modifier = Modifier) {
     Scaffold(
         modifier = modifier.fillMaxSize(),
         topBar = {
-            CustomAppBar(title = "GitHub Repository") {
-
-            }
+            CustomAppBar(title = "GitHub Repository")
         }
     ) { innerPadding->
         LazyColumn (
