@@ -26,8 +26,8 @@ class MainActivity : ComponentActivity() {
                         programingLanguage = "Kotlin",
                         color = Color.Blue,
                         repoDetails = "This is a sample repository for demonstrating Jetpack Compose.",
-                        numberOfStars = 1234,
-                        numberOfForks = 567
+                        starsNumber = 1234,
+                        forksNumber = 567
                     )
                 )
 //                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->

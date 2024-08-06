@@ -31,10 +31,7 @@ import coil.request.ImageRequest
 import com.example.githubreposapp.R
 import com.example.githubreposapp.data.models.DetailsScreenUiModel
 import com.example.githubreposapp.presentation.component.CustomAppBar
-
-
-
-
+import com.example.githubreposapp.presentation.component.CustomAsyncImage
 
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -58,19 +55,7 @@ fun DetailsScreen(modifier: Modifier, detailsScreenModel:DetailsScreenUiModel) {
 
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Image(
-            painter = rememberAsyncImagePainter(
-            ImageRequest.Builder(LocalContext.current)
-                .data(data =detailsScreenModel.repoImageUrl)
-                .apply (block = fun ImageRequest.Builder.(){
-                    crossfade(1000)
-                    placeholder(R.drawable.google)
-                }).build()
-        ),
-            contentDescription ="",
-            modifier = modifier
-
-        )
+        CustomAsyncImage(imageUrl = detailsScreenModel.repoImageUrl, placeholder = R.drawable.google)
         Text(
             text = detailsScreenModel.programingLanguage,
             color = Color.Black,
@@ -84,9 +69,9 @@ fun DetailsScreen(modifier: Modifier, detailsScreenModel:DetailsScreenUiModel) {
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            TextWithIconSection(detailsScreenModel.numberOfStars.toString(), R.drawable.ic_star)
+            TextWithIconSection(detailsScreenModel.starsNumber.toString(), R.drawable.ic_star)
             TextWithCircle(detailsScreenModel.programingLanguage, color =detailsScreenModel.color)
-            TextWithIconSection(text = detailsScreenModel.numberOfForks.toString(), id = R.drawable.fork)
+            TextWithIconSection(text = detailsScreenModel.forksNumber.toString(), id = R.drawable.fork)
 
         }
 
@@ -132,8 +117,8 @@ private fun PreviewDetailsScreen() {
             programingLanguage = "Kotlin",
             color = Color.Blue,
             repoDetails = "This is a sample repository for demonstrating Jetpack Compose.",
-            numberOfStars = 1234,
-            numberOfForks = 567
+            starsNumber = 1234,
+            forksNumber = 567
         )
     )
 }

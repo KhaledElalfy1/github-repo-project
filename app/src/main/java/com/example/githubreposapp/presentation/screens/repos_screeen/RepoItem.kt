@@ -9,6 +9,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.ColorScheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -22,24 +24,18 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.githubreposapp.R
+import com.example.githubreposapp.data.models.RepoItemUiModel
+import com.example.githubreposapp.presentation.component.CustomAsyncImage
 
 @Composable
-fun RepoItem() {
+fun RepoItem(repoItemModel:RepoItemUiModel) {
     Row(
         modifier = Modifier
+            .padding(vertical = 8.dp)
             .fillMaxWidth()
-            .background(Color.White, shape = RoundedCornerShape(12.dp))
+            .background(color = MaterialTheme.colorScheme.surface, shape = RoundedCornerShape(12.dp))
     ) {
-        Image(
-            painter = painterResource(id = R.drawable.ic_launcher_foreground),
-            contentDescription ="Avatar Image",
-            contentScale = ContentScale.Crop,
-            modifier= Modifier
-                .size(50.dp)
-                .padding(start = 8.dp, top = 20.dp)
-                .clip(RoundedCornerShape(50.dp))
-
-        )
+        CustomAsyncImage(imageUrl = repoItemModel.repoImageUrl, placeholder = R.drawable.ic_launcher_foreground)
 
         Column(modifier = Modifier.padding(10.dp)) {
             Row(
@@ -48,7 +44,7 @@ fun RepoItem() {
             )
             {
                 Text(
-                    text = "Repo  Name",
+                    text = repoItemModel.repoName,
                     overflow = TextOverflow.Ellipsis,
                     maxLines = 1,
                     color = Color.Black,
@@ -56,7 +52,7 @@ fun RepoItem() {
                         .weight(1f)
                     )
                 Text(
-                    text = "50",
+                    text = repoItemModel.starsNumber.toString(),
                     color = Color.Black,
                     modifier = Modifier.padding(horizontal = 6.dp)
                 )
@@ -71,11 +67,11 @@ fun RepoItem() {
             } // row
 
             Text(
-                text = "Repo Owner",
+                text = repoItemModel.repoOwner,
                 color = Color.Black
                 )
             Text(
-                text = "Description of the repo that come from github Description of the repo that come from githubDescription of the repo that come from githubDescription of the repo that come from githubDescription of the repo that come from github",
+                text = repoItemModel.repoDescription,
                 overflow = TextOverflow.Ellipsis,
                 maxLines = 2,
                 color = Color.Black,
@@ -89,5 +85,11 @@ fun RepoItem() {
 @Preview
 @Composable
 private fun PreviewRepoItem() {
-    RepoItem()
+    RepoItem( RepoItemUiModel(
+        repoImageUrl = "https://avatars.githubusercontent.com/u/1?v=4",
+        repoName = "Hello-World",
+        repoOwner = "octocat",
+        starsNumber = 1234,
+        repoDescription = "This your first repo!"
+    ))
 }
