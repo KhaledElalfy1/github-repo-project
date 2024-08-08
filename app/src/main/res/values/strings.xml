@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">GitHubReposApp</string>
+    <string name="show_issue">Show Issue</string>
+    <string name="back_icon">back Icon</string>
+    <string name="details">Details</string>
+    <string name="issue">Issue</string>
+    <string name="github_repository">GitHub Repository</string>
+
 </resources>

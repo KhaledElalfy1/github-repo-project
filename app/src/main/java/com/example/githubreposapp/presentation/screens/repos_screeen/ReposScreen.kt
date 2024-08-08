@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.githubreposapp.R
 import com.example.githubreposapp.data.models.RepoItemUiModel
 import com.example.githubreposapp.presentation.component.CustomAppBar
 import com.example.githubreposapp.presentation.screens.repos_screeen.component.RepoItem
@@ -94,7 +95,7 @@ fun ReposScreen(modifier: Modifier = Modifier) {
     Scaffold(
         modifier = modifier.fillMaxSize(),
         topBar = {
-            CustomAppBar(title = "GitHub Repository")
+            CustomAppBar(title =R.string.github_repository)
         }
     ) { innerPadding->
         LazyColumn (

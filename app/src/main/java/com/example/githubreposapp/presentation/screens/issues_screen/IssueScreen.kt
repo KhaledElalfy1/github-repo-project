@@ -13,6 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.githubreposapp.R
 import com.example.githubreposapp.data.models.IssueCardUiModel
 import com.example.githubreposapp.presentation.component.CustomAppBar
 import com.example.githubreposapp.presentation.screens.issues_screen.component.IssueCard
@@ -128,9 +129,11 @@ fun IssueScreen(modifier: Modifier = Modifier) {
     )
 
     Scaffold (
-        modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.primary),
+        modifier = modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colorScheme.primary),
         topBar = {
-            CustomAppBar(title = "Issue", onBackArrowClicked = {})
+            CustomAppBar(title = R.string.issue, onBackArrowClicked = {})
         }
     ){
         innerPadding->

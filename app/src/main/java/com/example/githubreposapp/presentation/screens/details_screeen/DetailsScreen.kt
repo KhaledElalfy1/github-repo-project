@@ -19,6 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
@@ -38,7 +39,7 @@ fun DetailsScreen(modifier: Modifier, detailsScreenModel:DetailsScreenUiModel) {
     Scaffold (
         modifier = modifier.fillMaxSize(),
         topBar = {
-            CustomAppBar(title = "Details", onBackArrowClicked = {})
+            CustomAppBar(title = R.string.details, onBackArrowClicked = {})
         }
     ){ innerPadding->
 
@@ -89,7 +90,7 @@ fun DetailsScreen(modifier: Modifier, detailsScreenModel:DetailsScreenUiModel) {
             colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.secondary)
         ) {
             Text(
-                text = "Show Issue",
+                text = stringResource(R.string.show_issue),
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onSecondary

@@ -12,27 +12,32 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
+import com.example.githubreposapp.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CustomAppBar(
     modifier: Modifier = Modifier,
-    title: String,
+    title: Int,
     backgroundColor: Color = MaterialTheme.colorScheme.primary,
     titleStyle: TextStyle = MaterialTheme.typography.displayLarge,
     onBackArrowClicked: (() -> Unit)? = null
 ) {
     CenterAlignedTopAppBar(
         modifier = modifier.background(backgroundColor),
-        title = { Text(text = title, style = TextStyle(fontSize = 30.sp)) },
+        title = { Text(text = stringResource(title), style = TextStyle(fontSize = 30.sp)) },
         navigationIcon = {
             if (onBackArrowClicked != null) {
                 IconButton(onClick = onBackArrowClicked) {
-                    Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "back Icon")
+                    Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack, contentDescription = stringResource(
+                        R.string.back_icon
+                    )
+                    )
                 }
             }
         }
@@ -43,5 +48,5 @@ fun CustomAppBar(
 @Preview(showBackground = true, showSystemUi = true, device = Devices.PIXEL_7)
 @Composable
 private fun PreviewCustomAppBar() {
-    CustomAppBar(Modifier,"Details", onBackArrowClicked = {} )
+    CustomAppBar(Modifier, R.string.details, onBackArrowClicked = {} )
 }
