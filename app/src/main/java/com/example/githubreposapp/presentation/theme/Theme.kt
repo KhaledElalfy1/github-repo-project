@@ -1,6 +1,6 @@
 package com.example.githubreposapp.presentation.theme
 
-import android.app.Activity
+
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -59,6 +59,7 @@ fun GitHubReposAppTheme(
     MaterialTheme(
         colorScheme = colorScheme,
         typography = Typography,
+        shapes = githubShapes,
         content = content
     )
 }
