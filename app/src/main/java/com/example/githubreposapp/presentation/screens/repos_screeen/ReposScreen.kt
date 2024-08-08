@@ -14,6 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.githubreposapp.data.models.RepoItemUiModel
 import com.example.githubreposapp.presentation.component.CustomAppBar
+import com.example.githubreposapp.presentation.screens.repos_screeen.component.RepoItem
 
 @Composable
 fun ReposScreen(modifier: Modifier = Modifier) {

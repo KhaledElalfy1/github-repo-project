@@ -1,4 +1,4 @@
-package com.example.githubreposapp.presentation.screens.details_screeen
+package com.example.githubreposapp.presentation.screens.details_screeen.component
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Row

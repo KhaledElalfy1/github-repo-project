@@ -1,3 +1,3 @@
-**Final UI**
+**Final UI for Issue Screen**
 
-![Screenshot](Screenshot_20240730_212244.png)
+![Screenshot](issue_screen.png)

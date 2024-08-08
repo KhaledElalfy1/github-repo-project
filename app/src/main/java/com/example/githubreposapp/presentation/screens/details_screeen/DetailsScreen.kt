@@ -28,6 +28,8 @@ import com.example.githubreposapp.R
 import com.example.githubreposapp.data.models.DetailsScreenUiModel
 import com.example.githubreposapp.presentation.component.CustomAppBar
 import com.example.githubreposapp.presentation.component.CustomAsyncImage
+import com.example.githubreposapp.presentation.screens.details_screeen.component.TextWithCircle
+import com.example.githubreposapp.presentation.screens.details_screeen.component.TextWithIconSection
 
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")

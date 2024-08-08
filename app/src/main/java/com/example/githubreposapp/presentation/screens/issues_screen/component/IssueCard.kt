@@ -1,4 +1,4 @@
-package com.example.githubreposapp.presentation.screens.issues_screen
+package com.example.githubreposapp.presentation.screens.issues_screen.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -26,26 +26,21 @@ import com.example.githubreposapp.presentation.component.CustomAsyncImage
 
 @Composable
 fun IssueCard(modifier: Modifier = Modifier, issueModel: IssueCardUiModel) {
-    Column(
-        modifier = modifier
-            .padding(vertical = 8.dp)
-            .fillMaxWidth()
-            .background(
-                color = MaterialTheme.colorScheme.surface,
-                shape = RoundedCornerShape(12.dp)
-            )
-    ) {
+
         Row(
-            modifier = Modifier
-                .padding(8.dp)
-                .fillMaxWidth(),
+            modifier
+                .fillMaxWidth()
+                .background(
+                    color = MaterialTheme.colorScheme.surface,
+                    shape = RoundedCornerShape(12.dp))
+                .padding(vertical = 8.dp, horizontal = 16.dp),
             horizontalArrangement = Arrangement.Start,
             verticalAlignment = Alignment.Top
         ) {
             CustomAsyncImage(
                 imageUrl = issueModel.issueImageUrl,
-                placeholder = R.drawable.ic_launcher_foreground,
-                modifier = Modifier.size(64.dp)
+                placeholder = R.drawable.google,
+                modifier = Modifier.size(50.dp)
             )
             Column(
                 modifier = Modifier.padding(start = 8.dp)
@@ -93,7 +88,7 @@ fun IssueCard(modifier: Modifier = Modifier, issueModel: IssueCardUiModel) {
                 }
             }
         }
-    }
+
 }
 
 @Preview

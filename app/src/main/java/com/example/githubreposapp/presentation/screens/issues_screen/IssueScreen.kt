@@ -15,6 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.githubreposapp.data.models.IssueCardUiModel
 import com.example.githubreposapp.presentation.component.CustomAppBar
+import com.example.githubreposapp.presentation.screens.issues_screen.component.IssueCard
 
 @Composable
 fun IssueScreen(modifier: Modifier = Modifier) {
@@ -127,7 +128,7 @@ fun IssueScreen(modifier: Modifier = Modifier) {
     )
 
     Scaffold (
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.primary),
         topBar = {
             CustomAppBar(title = "Issue", onBackArrowClicked = {})
         }
