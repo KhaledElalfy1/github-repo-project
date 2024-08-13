@@ -1,76 +1,95 @@
 package com.example.githubreposapp.data.local
 
+import androidx.compose.ui.graphics.Color
 import com.example.githubreposapp.data.models.RepoItemUiModel
 
-val sampleRepos = listOf(
+val repoItemList = listOf(
     RepoItemUiModel(
-        repoImageUrl = "https://avatars.githubusercontent.com/u/1?v=4",
-        repoName = "Hello-World",
-        repoOwner = "octocat",
-        starsNumber = 1234,
-        repoDescription = "This your first repo!"
+        repoImageUrl = "https://avatars.githubusercontent.com/u/583231?v=4",
+        repoName = "Awesome Project",
+        repoOwner = "JohnDoe",
+        programingLanguage = "Kotlin",
+        color = Color.Blue,
+        repoDescription = "An awesome project to demonstrate something cool.",
+        repoDetails = "This repository contains all the awesome features...",
+        starsNumber = "1.2k",
+        forksNumber = "300"
     ),
     RepoItemUiModel(
-        repoImageUrl = "https://avatars.githubusercontent.com/u/2?v=4",
-        repoName = "Spoon-Knife",
-        repoOwner = "octocat",
-        starsNumber = 5678,
-        repoDescription = "This repo is for demonstration purposes only."
+        repoImageUrl = "https://avatars.githubusercontent.com/u/763033?v=4",
+        repoName = "Another Great Repo",
+        repoOwner = "JaneDoe",
+        programingLanguage = "Java",
+        color = Color.Green,
+        repoDescription = "This project showcases some great Java concepts.",
+        repoDetails = "In this repository, you will find advanced Java techniques...",
+        starsNumber = "900",
+        forksNumber = "150"
     ),
     RepoItemUiModel(
-        repoImageUrl = "https://avatars.githubusercontent.com/u/3?v=4",
-        repoName = "Octocat-Git",
-        repoOwner = "octocat",
-        starsNumber = 91011,
-        repoDescription = "A collection of Octocat GitHub mascots."
+        repoImageUrl = "https://avatars.githubusercontent.com/u/14101776?v=4",
+        repoName = "Flutter Fun",
+        repoOwner = "FlutterDev",
+        programingLanguage = "Dart",
+        color = Color.Cyan,
+        repoDescription = "A fun project built with Flutter.",
+        repoDetails = "Explore the power of Flutter in building cross-platform apps...",
+        starsNumber = "2.5k",
+        forksNumber = "500"
     ),
     RepoItemUiModel(
-        repoImageUrl = "https://avatars.githubusercontent.com/u/4?v=4",
-        repoName = "Hello-World-Again",
-        repoOwner = "octocat",
-        starsNumber = 1213,
-        repoDescription = "Another sample repository."
+        repoImageUrl = "https://avatars.githubusercontent.com/u/9919?v=4",
+        repoName = "Linux Kernel",
+        repoOwner = "LinusTorvalds",
+        programingLanguage = "C",
+        color = Color.Gray,
+        repoDescription = "The Linux operating system kernel.",
+        repoDetails = "This repository contains the source code of the Linux kernel...",
+        starsNumber = "120k",
+        forksNumber = "40k"
     ),
     RepoItemUiModel(
-        repoImageUrl = "https://avatars.githubusercontent.com/u/5?v=4",
-        repoName = "Awesome-Project",
-        repoOwner = "user1",
-        starsNumber = 4321,
-        repoDescription = "An awesome project with many features."
+        repoImageUrl = "https://avatars.githubusercontent.com/u/69631?v=4",
+        repoName = "React",
+        repoOwner = "Facebook",
+        programingLanguage = "JavaScript",
+        color = Color.Blue,
+        repoDescription = "A JavaScript library for building user interfaces.",
+        repoDetails = "React makes it painless to create interactive UIs...",
+        starsNumber = "180k",
+        forksNumber = "36k"
     ),
     RepoItemUiModel(
-        repoImageUrl = "https://avatars.githubusercontent.com/u/6?v=4",
-        repoName = "CoolLib",
-        repoOwner = "user2",
-        starsNumber = 8765,
-        repoDescription = "A cool library for developers."
+        repoImageUrl = "https://avatars.githubusercontent.com/u/14985020?v=4",
+        repoName = "TensorFlow",
+        repoOwner = "Google",
+        programingLanguage = "Python",
+        color = Color.Blue,
+        repoDescription = "An end-to-end open-source machine learning platform.",
+        repoDetails = "TensorFlow is an open-source software library for machine learning...",
+        starsNumber = "170k",
+        forksNumber = "88k"
     ),
     RepoItemUiModel(
-        repoImageUrl = "https://avatars.githubusercontent.com/u/7?v=4",
-        repoName = "AmazingRepo",
-        repoOwner = "user3",
-        starsNumber = 6543,
-        repoDescription = "An amazing repository with fantastic code."
+        repoImageUrl = "https://avatars.githubusercontent.com/u/439034?v=4",
+        repoName = "Vue.js",
+        repoOwner = "EvanYou",
+        programingLanguage = "JavaScript",
+        color = Color.Green,
+        repoDescription = "The Progressive JavaScript Framework.",
+        repoDetails = "Vue.js is a progressive framework for building user interfaces...",
+        starsNumber = "200k",
+        forksNumber = "32k"
     ),
     RepoItemUiModel(
-        repoImageUrl = "https://avatars.githubusercontent.com/u/8?v=4",
-        repoName = "NewFeature",
-        repoOwner = "user4",
-        starsNumber = 3210,
-        repoDescription = "Repository showcasing a new feature."
-    ),
-    RepoItemUiModel(
-        repoImageUrl = "https://avatars.githubusercontent.com/u/9?v=4",
-        repoName = "BetaRelease",
-        repoOwner = "user5",
-        starsNumber = 5678,
-        repoDescription = "Beta release for testing new features."
-    ),
-    RepoItemUiModel(
-        repoImageUrl = "https://avatars.githubusercontent.com/u/10?v=4",
-        repoName = "FinalVersion",
-        repoOwner = "user6",
-        starsNumber = 9876,
-        repoDescription = "The final version of the software."
+        repoImageUrl = "https://avatars.githubusercontent.com/u/2952946?v=4",
+        repoName = "Django",
+        repoOwner = "Django",
+        programingLanguage = "Python",
+        color = Color.Blue,
+        repoDescription = "The Web framework for perfectionists with deadlines.",
+        repoDetails = "Django is a high-level Python Web framework that encourages rapid development...",
+        starsNumber = "70k",
+        forksNumber = "29k"
     )
 )

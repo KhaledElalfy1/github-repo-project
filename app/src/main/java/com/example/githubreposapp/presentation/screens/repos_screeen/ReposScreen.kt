@@ -13,15 +13,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.githubreposapp.R
-import com.example.githubreposapp.data.local.sampleRepos
+import com.example.githubreposapp.data.local.repoItemList
 import com.example.githubreposapp.data.models.RepoItemUiModel
 import com.example.githubreposapp.presentation.component.CustomAppBar
 import com.example.githubreposapp.presentation.screens.repos_screeen.component.RepoItem
 
 @Composable
 fun ReposScreen(
+    modifier: Modifier = Modifier,
     repoSamples:List<RepoItemUiModel>,
-    modifier: Modifier = Modifier
+    onRepoItemClicked:(repoSample:RepoItemUiModel)->Unit,
 ) {
 
 
@@ -40,7 +41,10 @@ fun ReposScreen(
 
             horizontalAlignment = Alignment.CenterHorizontally
         ){
-            items(repoSamples){ repoSample-> RepoItem(repoItemModel =repoSample
+            items(repoSamples){ repoSample-> RepoItem(
+                repoItemModel =repoSample,
+                onRepoItemClicked={onRepoItemClicked(repoSample)},
+
             )
             }
         }
@@ -52,5 +56,5 @@ fun ReposScreen(
 @Preview
 @Composable
 private fun PreviewReposScreen() {
-    ReposScreen(sampleRepos)
+    ReposScreen(Modifier,repoItemList, onRepoItemClicked = {})
 }

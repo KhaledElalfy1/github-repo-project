@@ -26,7 +26,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.githubreposapp.R
-import com.example.githubreposapp.data.models.DetailsScreenUiModel
+import com.example.githubreposapp.data.local.repoItemList
+import com.example.githubreposapp.data.models.RepoItemUiModel
 import com.example.githubreposapp.presentation.component.CustomAppBar
 import com.example.githubreposapp.presentation.component.CustomAsyncImage
 import com.example.githubreposapp.presentation.screens.details_screeen.component.TextWithCircle
@@ -35,7 +36,10 @@ import com.example.githubreposapp.presentation.screens.details_screeen.component
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun DetailsScreen(modifier: Modifier, detailsScreenModel:DetailsScreenUiModel) {
+fun DetailsScreen(
+    detailsScreenModel:RepoItemUiModel,
+    modifier: Modifier=Modifier,
+) {
     Scaffold (
         modifier = modifier.fillMaxSize(),
         topBar = {
@@ -66,9 +70,9 @@ fun DetailsScreen(modifier: Modifier, detailsScreenModel:DetailsScreenUiModel) {
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            TextWithIconSection(detailsScreenModel.starsNumber.toString(), R.drawable.ic_star)
+            TextWithIconSection(detailsScreenModel.starsNumber, R.drawable.ic_star)
             TextWithCircle(detailsScreenModel.programingLanguage, color =detailsScreenModel.color)
-            TextWithIconSection(text = detailsScreenModel.forksNumber.toString(), id = R.drawable.fork)
+            TextWithIconSection(text = detailsScreenModel.forksNumber, id = R.drawable.fork)
 
         }
 
@@ -107,15 +111,5 @@ fun DetailsScreen(modifier: Modifier, detailsScreenModel:DetailsScreenUiModel) {
 @Preview(showBackground = true, showSystemUi = true, device = Devices.PIXEL_7)
 @Composable
 private fun PreviewDetailsScreen() {
-    DetailsScreen(
-        modifier = Modifier,
-        detailsScreenModel = DetailsScreenUiModel(
-            repoImageUrl = "https://example.com/repo_image.png",
-            programingLanguage = "Kotlin",
-            color = Color.Blue,
-            repoDetails = "This is a sample repository for demonstrating Jetpack Compose.",
-            starsNumber = 1234,
-            forksNumber = 567
-        )
-    )
+   DetailsScreen(detailsScreenModel = repoItemList.first())
 }

@@ -2,6 +2,7 @@ package com.example.githubreposapp.presentation.screens.repos_screeen.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -21,16 +22,21 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.githubreposapp.R
+import com.example.githubreposapp.data.local.repoItemList
 import com.example.githubreposapp.data.models.RepoItemUiModel
 import com.example.githubreposapp.presentation.component.CustomAsyncImage
 
 @Composable
-fun RepoItem(repoItemModel:RepoItemUiModel) {
+fun RepoItem(
+    repoItemModel:RepoItemUiModel,
+    onRepoItemClicked:(repoItem:RepoItemUiModel)->Unit
+) {
     Row(
         modifier = Modifier
             .padding(vertical = 8.dp)
             .fillMaxWidth()
             .background(color = MaterialTheme.colorScheme.surface, shape = RoundedCornerShape(12.dp))
+            .clickable { onRepoItemClicked(repoItemModel) }
     ) {
         CustomAsyncImage(imageUrl = repoItemModel.repoImageUrl, placeholder = R.drawable.ic_launcher_foreground)
 
@@ -49,7 +55,7 @@ fun RepoItem(repoItemModel:RepoItemUiModel) {
                         .weight(1f)
                     )
                 Text(
-                    text = repoItemModel.starsNumber.toString(),
+                    text = repoItemModel.starsNumber,
                     color = Color.Black,
                     modifier = Modifier.padding(horizontal = 6.dp)
                 )
@@ -82,11 +88,7 @@ fun RepoItem(repoItemModel:RepoItemUiModel) {
 @Preview
 @Composable
 private fun PreviewRepoItem() {
-    RepoItem( RepoItemUiModel(
-        repoImageUrl = "https://avatars.githubusercontent.com/u/1?v=4",
-        repoName = "Hello-World",
-        repoOwner = "octocat",
-        starsNumber = 1234,
-        repoDescription = "This your first repo!"
-    ))
+    RepoItem( repoItemList.first(),
+        onRepoItemClicked = {}
+        )
 }
